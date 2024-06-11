@@ -2,8 +2,8 @@ runtime: python311
 entrypoint: gunicorn -b :$PORT app:app
 
 handlers:
-- url: /static
-  static_dir: templates
+- url: /predict
+  script: auto
 
 - url: /.*
-  script: auto
+  static_dir: templates
